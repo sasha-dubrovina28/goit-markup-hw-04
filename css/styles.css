@@ -67,6 +67,7 @@ section {
 
 .header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .container {
@@ -90,7 +91,6 @@ section {
 .features-list {
     display: flex;
     gap: 24px;
-    
 }
 .features-item {
     width: calc((100% - 72px) / 4);
@@ -101,6 +101,25 @@ section {
     font-weight: 500;
     font-size: 20px;
     color: #2e2f42;
+}
+
+.feature-icon-box {
+    width: 264px;
+    height: 112px;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    background-color: #F4F4FD;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 8px;
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
 }
 
 .header .container {
@@ -170,34 +189,23 @@ section {
 }
 
 .hero {
-    background-color: #2E2F42;
-    padding: 188px 0;
     text-align: center;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url("../images/background.jpg");
+    background-color: #2E2F42;
     background-size: cover;
+    padding: 0;
+}
+
+.hero-bg {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 188px 0;
+    background-color: #2E2F42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/background.jpg");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-    overflow: hidden;
-    
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-
-.hero .container {
-    position: relative;
-    z-index: 2;
-}
 
 .hero-title {
     color: #FFFFFF;
@@ -217,6 +225,10 @@ section {
     padding: 16px 32px;
     border: none;
     border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus {
@@ -301,12 +313,8 @@ section {
     margin-top: 16px;
 }
 
-.features-icon {
-    width: 264px;
-    height: 112px;
-    border: 1px solid #000;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #F4F4FD;
+.team .social-list {
+    margin-top: 8px;
 }
 
 
@@ -360,13 +368,13 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(63, 81, 181, 0.85);
+    background-color: #4D5AE5;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 16px;
+    padding: 40px 32px;
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -377,6 +385,7 @@ section {
     height: 300px;
     overflow: hidden;
 }
+
 
 .portfolio-image-wrapper img {
     display: block;
@@ -404,7 +413,7 @@ section {
 
 .footer-container {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline; 
     gap: 120px;
 }
 
@@ -423,6 +432,19 @@ section {
     margin-bottom: 16px;
 }
 
+.footer-social .social-list {
+    gap: 16px;
+}
+
+.footer-social .social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-social .social-link:hover,
+.footer-social .social-link:focus {
+    background-color: #404BBF;
+}
 
 .main-nav {
     margin-right: auto;
@@ -449,12 +471,13 @@ section {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover,
-.nav-link .link:focus,
+.nav-link:focus,
 .nav-link:active,
 .nav-link.current,
 .social-link:hover,
 .social-link:focus {
     color: #404BBF;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-nav {
@@ -471,6 +494,7 @@ section {
 .contact-nav .link {
     display: block;
     padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover::after,
@@ -483,12 +507,14 @@ section {
 .contact-nav .link:focus,
 .contact-nav .link:active {
     color: #404BBF;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
 .social-link:focus {
     background-color: #31D0AA;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item:hover {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
