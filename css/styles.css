@@ -441,10 +441,6 @@ section {
     height: 24px;
 }
 
-.footer-social .social-link:hover,
-.footer-social .social-link:focus {
-    background-color: #404BBF;
-}
 
 .main-nav {
     margin-right: auto;
